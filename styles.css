@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-blue);
+  background: linear-gradient(20deg, rgba(0,0,0,.8), rgba(0,0,0,.3));
   height: 100vh;
 }
 
@@ -95,16 +95,17 @@ form button:hover {
 .modal-content {
   width: 80%;
   max-width: 60rem;
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.906);
   margin: 15% auto;
   padding: 2rem;
   border: 1px solid #777;
   text-align: center;
-  animation: slide ease .8s;
+  animation: slide ease 1s;
+  border-radius: 2rem;
 }
 
 .slide-up {
-  animation: slide-up ease .8s;
+  animation: slide-up ease 1s;
 }
 
 @keyframes slide-up {
@@ -112,13 +113,15 @@ form button:hover {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-50rem);
+    transform: translateY(-70rem) scale(.5);
+    opacity: 0%;
   }
 }
 
 @keyframes slide {
   0% {
-    transform: translateY(-30rem);
+    transform: translateY(-30rem) scale(.5);
+    opacity: 0%;
   }
   100% {
     transform: translateY(0);
@@ -126,14 +129,20 @@ form button:hover {
 }
 
 .close {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+  display: flex;
   color: var(--color-primary);
   font-size: 2rem;
   cursor: pointer;
+  width: 100%;
+  border: none;
+  justify-content: flex-end;
+  transform: translate(0, -30%);
+  background: none;
 }
 
+.close:hover {
+  opacity: 50%;
+}
 
 img {
   width: 100%;
@@ -143,4 +152,8 @@ img {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+h1 {
+  transform: translate(0, -50%);
 }
